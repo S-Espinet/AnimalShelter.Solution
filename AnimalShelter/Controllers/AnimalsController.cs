@@ -18,11 +18,20 @@ namespace AnimalShelter.Controllers
       _db = db;
     }
 
-    //Get api/shelterAnimals
+    //Get api/animals
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Animal>>> Get()
     {
       return await _db.Animals.ToListAsync();
+    }
+
+    // POST api/animals
+    [HttpPost]
+    public async Task<ActionResult<Animal>> Post(Animal animal)
+    {
+      _db.Animals.Add(animal);
+      await _db.SaveChangesAsync();
+      return CreatedAtAction("Post", new { id = animal.AnimalId }, animal);
     }
   }
 }
