@@ -2,6 +2,7 @@
 
 namespace AnimalShelter.Migrations
 {
+#pragma warning disable CS1591
     public partial class SeedData : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -41,4 +42,5 @@ namespace AnimalShelter.Migrations
                 keyValue: 4);
         }
     }
+#pragma warning restore CS1591
 }

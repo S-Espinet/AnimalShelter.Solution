@@ -8,6 +8,7 @@ using AnimalShelter.Models;
 
 namespace AnimalShelter.Controllers
 {
+#pragma warning disable CS1591
   [Route("api/[controller]")]
   [ApiController]
   public class AnimalsController : ControllerBase
@@ -17,15 +18,16 @@ namespace AnimalShelter.Controllers
     {
       _db = db;
     }
+#pragma warning restore CS1591
 
     //Get api/animals
     /// <summary>
-    /// Gets multiple destinations, can be sorted
+    /// Gets all animals, can be sorted
     /// </summary>
     /// <remarks>
-    /// Get all reviews:
+    /// Get all animals:
     ///
-    ///     GET /Destinations
+    ///     GET /animals
     ///     {
     ///     }
     ///

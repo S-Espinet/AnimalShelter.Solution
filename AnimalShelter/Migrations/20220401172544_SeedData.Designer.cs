@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AnimalShelter.Migrations
 {
+#pragma warning disable CS1591
     [DbContext(typeof(AnimalShelterContext))]
     [Migration("20220401172544_SeedData")]
     partial class SeedData
@@ -77,4 +78,5 @@ namespace AnimalShelter.Migrations
 #pragma warning restore 612, 618
         }
     }
+#pragma warning restore CS1591
 }

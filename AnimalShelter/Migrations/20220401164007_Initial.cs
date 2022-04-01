@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace AnimalShelter.Migrations
 {
+#pragma warning disable CS1591
     public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -30,4 +31,5 @@ namespace AnimalShelter.Migrations
                 name: "Animals");
         }
     }
+#pragma warning restore CS1591
 }

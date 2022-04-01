@@ -18,6 +18,7 @@ using System.IO;
 
 namespace AnimalShelter
 {
+#pragma warning disable CS1591
   public class Startup
   {
     public Startup(IConfiguration configuration)
@@ -69,4 +70,5 @@ namespace AnimalShelter
       });
     }
   }
+#pragma warning restore CS1591
 }

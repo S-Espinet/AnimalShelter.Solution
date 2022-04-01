@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AnimalShelter.Models
 {
+#pragma warning disable CS1591
   public class AnimalShelterContext : DbContext
   {
     public AnimalShelterContext(DbContextOptions<AnimalShelterContext> options)
@@ -21,4 +22,5 @@ namespace AnimalShelter.Models
         );
     }
   }
+#pragma warning restore CS1591
 }
