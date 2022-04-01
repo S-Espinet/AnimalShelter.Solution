@@ -67,8 +67,8 @@ namespace AnimalShelter.Controllers
     }
 
     // POST api/animals
-        /// <summary>
-    /// Creates new destination
+    /// <summary>
+    /// Creates new animal
     /// </summary>
     /// <remarks>
     /// Sample request:
@@ -79,7 +79,6 @@ namespace AnimalShelter.Controllers
     ///       "Name": "Name of Animal",
     ///       "Age": Integer,
     ///       "Gender": "Female or Male"
-    ///       "NumOfReviews": an integer
     ///     }
     ///
     ///
@@ -96,6 +95,20 @@ namespace AnimalShelter.Controllers
     }
 
     // Get api/animals/id
+    /// <summary>
+    /// Retrieve animal based on ID
+    /// </summary>
+    /// <remarks>
+    /// Sample request:
+    ///
+    ///     Get /animal/2
+    ///     {
+    ///     }
+    ///
+    /// </remarks>
+    ///
+    /// <param name="id">Animal Id</param>
+    /// <response code="404">No animal with that Id exists.</response>
 
     [HttpGet("{id}")]
     public async Task<ActionResult<Animal>> GetAnimal(int id)
@@ -108,7 +121,28 @@ namespace AnimalShelter.Controllers
       return animal;
     }
 
-    // PUT: api/Animals/id
+    // PUT: api/animals/id
+    /// <summary>
+    /// Edits an animal
+    /// </summary>
+    /// <remarks>
+    /// Sample request:
+    ///
+    ///     Put /animals/id
+    ///     {
+    ///       "Type": "Updated Type of Animal; Cat or Dog",
+    ///       "Name": "Updated Animal Name",
+    ///       "Age": Updated Integer,
+    ///       "Gender": "Updated Gender",
+    ///     }
+    ///
+    ///
+    /// </remarks>
+    ///
+    /// <param name="id"></param>
+    /// <param name="animal"></param>
+    /// <response code="204">Updates Animal</response>
+    /// <response code="400">Animal ID doesn't match ID that is passed.</response>
     
     [HttpPut("{id}")]
     public async Task<IActionResult> Put(int id, Animal animal)
@@ -139,7 +173,23 @@ namespace AnimalShelter.Controllers
       return NoContent();
     }
 
-    // DELETE: api/Animals/id
+    // DELETE: api/animals/id
+    /// <summary>
+    /// Removes an animal
+    /// </summary>
+    /// <remarks>
+    /// Sample request:
+    ///
+    ///     Delete /animals/id
+    ///     {
+    ///     }
+    ///
+    ///
+    /// </remarks>
+    ///
+    /// <param name="id"></param>
+    /// <response code="204">Removes animal</response>
+    /// <response code="404">Animal ID doesn't exist.</response>
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteAnimal(int id)
     {
