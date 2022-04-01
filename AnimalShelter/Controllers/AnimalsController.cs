@@ -29,24 +29,39 @@ namespace AnimalShelter.Controllers
     ///     {
     ///     }
     ///
-    /// Sort by Number of Reviews:
+    /// Sort by Type:
     ///
-    ///     GET /Destinations?sortMethod=numOfReviews
+    ///     GET /animals?sortMethod=type
     ///     {
     ///     }
     ///
-    /// Sort by Average Rating:
+    /// Sort by Gender:
     ///
-    ///     GET /Destinations?sortMethod=averageRating
+    ///     GET /animals?sortMethod=gender
     ///     {
     ///     }
     ///
     ///
     /// </remarks>
+    ///
+    /// <param name="sortMethod">Either blank, type, or gender</param>
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Animal>>> Get()
+    public async Task<ActionResult<IEnumerable<Animal>>> Get(string sortMethod)
     {
-      return await _db.Animals.ToListAsync();
+      var query = _db.Animals.AsQueryable();
+      if (sortMethod == "type")
+      {
+        query = _db.Animals.OrderBy(animal => animal.Type);
+      }
+      else if (sortMethod == "gender")
+      {
+        query = _db.Animals.OrderBy(animal => animal.Gender);
+      }
+      else
+      {
+        query = _db.Animals.OrderBy(animal => animal.Age);
+      }
+      return await query.ToListAsync();
     }
 
     // POST api/animals
