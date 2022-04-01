@@ -17,5 +17,12 @@ namespace AnimalShelter.Controllers
     {
       _db = db;
     }
+
+    //Get api/shelterAnimals
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<Animal>>> Get()
+    {
+      return await _db.Animals.ToListAsync();
+    }
   }
 }
