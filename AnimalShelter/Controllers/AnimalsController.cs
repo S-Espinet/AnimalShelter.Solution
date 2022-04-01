@@ -67,6 +67,26 @@ namespace AnimalShelter.Controllers
     }
 
     // POST api/animals
+        /// <summary>
+    /// Creates new destination
+    /// </summary>
+    /// <remarks>
+    /// Sample request:
+    ///
+    ///     Post /animals
+    ///     {
+    ///       "Type": "Type of Animal; Cat or Dog",
+    ///       "Name": "Name of Animal",
+    ///       "Age": Integer,
+    ///       "Gender": "Female or Male"
+    ///       "NumOfReviews": an integer
+    ///     }
+    ///
+    ///
+    /// </remarks>
+    ///
+    /// <param name="animal">An Animal</param>
+    /// <response code="201">Returns a newly created animal.</response>
     [HttpPost]
     public async Task<ActionResult<Animal>> Post(Animal animal)
     {
@@ -76,6 +96,7 @@ namespace AnimalShelter.Controllers
     }
 
     // Get api/animals/id
+
     [HttpGet("{id}")]
     public async Task<ActionResult<Animal>> GetAnimal(int id)
     {
@@ -88,6 +109,7 @@ namespace AnimalShelter.Controllers
     }
 
     // PUT: api/Animals/id
+    
     [HttpPut("{id}")]
     public async Task<IActionResult> Put(int id, Animal animal)
     {
