@@ -64,7 +64,7 @@ _This is a C# application that uses .NET and Entity to work with a SQL database 
 * _explore endpoints with Postman or your browser (http://localhost:5000/api/animals/{optional endpoint})_  
 
 ###Swagger
-* _Swagger allows for documentation for API routes; to access run "dotnet run" in your termanial and navigate to http://localhost:5000/swagger_
+* _Swagger allows for documentation for API routes; to access run "dotnet run" in your termanal and navigate to http://localhost:5000/swagger_
 * _You can click on any route type to see further notes, and use `Try it out` to explore endpoints in a manner similar to Postman_
 
 ###Endpoints
@@ -75,6 +75,22 @@ _This is a C# application that uses .NET and Entity to work with a SQL database 
 			* _api/animals?sortMethod-gender_
 	* Post /api/animals
 	* GET /api/animals/{id}
+	* PUT api/animals/{id}
+	* DELETE api/animals/{id}  
+* ExampleQuery:   
+	* _https://localhost:5000/api/animals/3_
+* Example JSON Response:   
+
+~~~    
+{
+	"animalId": 3,
+	"type": "Cat",
+	"name": "Ganon",
+	"age": 3,
+	"gender": "Male"
+}  
+~~~  
+
 ## Known Bugs
 
 * _This is not a real API_
