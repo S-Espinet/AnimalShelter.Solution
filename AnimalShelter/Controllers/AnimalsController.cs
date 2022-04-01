@@ -19,6 +19,30 @@ namespace AnimalShelter.Controllers
     }
 
     //Get api/animals
+    /// <summary>
+    /// Gets multiple destinations, can be sorted
+    /// </summary>
+    /// <remarks>
+    /// Get all reviews:
+    ///
+    ///     GET /Destinations
+    ///     {
+    ///     }
+    ///
+    /// Sort by Number of Reviews:
+    ///
+    ///     GET /Destinations?sortMethod=numOfReviews
+    ///     {
+    ///     }
+    ///
+    /// Sort by Average Rating:
+    ///
+    ///     GET /Destinations?sortMethod=averageRating
+    ///     {
+    ///     }
+    ///
+    ///
+    /// </remarks>
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Animal>>> Get()
     {

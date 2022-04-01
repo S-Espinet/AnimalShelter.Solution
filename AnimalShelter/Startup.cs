@@ -41,9 +41,9 @@ namespace AnimalShelter
             Version = "v1",
             Description = "Simple ASP.NET Core Web API with an animal shelter-based database."
         });
-        // var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-        // var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-        // c.IncludeXmlComments(xmlPath);
+        var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+        var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+        c.IncludeXmlComments(xmlPath);
       });
     }
 
